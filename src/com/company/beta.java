@@ -46,7 +46,7 @@ public class beta {
         diff3[7] = ("submission");
         diff3[8] = ("alcoholic");
         boolean diffChosen = false;
-        String chosenWord="";
+        String chosenWord = "";
         while (!diffChosen) {
             System.out.println("Welcome to Hangman!");
             System.out.println();
@@ -57,18 +57,17 @@ public class beta {
             System.out.println("Your answer:");
             String diffChoice = read.nextLine();
             if (diffChoice.matches("A") || diffChoice.matches("a")) {
-                diffChosen=true;
+                diffChosen = true;
                 chosenWord = diff1[random];
             }
             if (diffChoice.matches("B") || diffChoice.matches("b")) {
-                diffChosen=true;
+                diffChosen = true;
                 chosenWord = diff2[random];
             }
             if (diffChoice.matches("C") || diffChoice.matches("c")) {
-                diffChosen=true;
+                diffChosen = true;
                 chosenWord = diff3[random];
             }
         }
-        System.out.println(chosenWord);
     }
 }
