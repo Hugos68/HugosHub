@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Hugo's Hub:jar">
+    <output-path>$USER_HOME$/Desktop/Hugo_s_Hub_jar</output-path>
+    <root id="archive" name="Hugo's Hub.jar">
+      <element id="module-output" name="Hugo's Hub" />
+    </root>
+  </artifact>
+</component>
