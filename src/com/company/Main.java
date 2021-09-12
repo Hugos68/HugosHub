@@ -36,10 +36,15 @@ public class Main {
             String programChoice = read.nextLine();
             System.out.println();
             if (programChoice.matches("A") || programChoice.matches("a")) {
+                programChosen=true;
                 alphaObject.guessTheNumber();
             }
             if (programChoice.matches("B") || programChoice.matches("b")) {
+                programChosen=true;
                 betaObject.hangman();
+            }
+            else {
+                System.out.println("Please pick one of the listed programs");
             }
         }
     }
