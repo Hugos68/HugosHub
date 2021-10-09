@@ -16,9 +16,8 @@ public class Main {
             for (int m=0; m<25; m++) {
                 System.out.print("- ");
             }
-            System.out.println();
-            System.out.println("Welcome to Hugo's Hub!");
-            System.out.println("Please choose a program you want to launch.");
+            System.out.println("\nWelcome to Hugo's Hub!\n");
+            System.out.println("Please choose a program you want to launch:");
             System.out.println("A: Guess the number!");
             System.out.println("B: Hangman!");
             System.out.println("C: Password Strength Validator");
@@ -30,11 +29,8 @@ public class Main {
             for (int m=0; m<25; m++) {
                 System.out.print("- ");
             }
-            System.out.println();
-
-            System.out.println("Your answer:");
+            System.out.println("\nYour answer:\n");
             String programChoice = read.nextLine();
-            System.out.println();
             if (programChoice.matches("A") || programChoice.matches("a")) {
                 programChosen=true;
                 alphaObject.guessTheNumber();

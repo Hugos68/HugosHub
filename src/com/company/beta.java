@@ -1,13 +1,9 @@
 package com.company;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
-
 import static com.company.Main.read;
 
 public class beta {
-
-    public void hangman() {
-        MyFrame MyFrame = new MyFrame();
+    public void hangman() {;
         int random = (int) (Math.random() * (9));
         //difficulty 1
         String[] diff1;
@@ -46,10 +42,9 @@ public class beta {
         diff3[7] = ("submission");
         diff3[8] = ("alcoholic");
         boolean diffChosen = false;
-        String chosenWord = "";
+        String chosenWord;
+        System.out.println("Welcome to Hangman!\n");
         while (!diffChosen) {
-            System.out.println("Welcome to Hangman!");
-            System.out.println();
             System.out.println("Please choose a difficulty:");
             System.out.println("A: Easy");
             System.out.println("B: Normal");
@@ -60,14 +55,48 @@ public class beta {
                 diffChosen = true;
                 chosenWord = diff1[random];
             }
-            if (diffChoice.matches("B") || diffChoice.matches("b")) {
+            else if (diffChoice.matches("B") || diffChoice.matches("b")) {
                 diffChosen = true;
                 chosenWord = diff2[random];
             }
-            if (diffChoice.matches("C") || diffChoice.matches("c")) {
+            else if (diffChoice.matches("C") || diffChoice.matches("c")) {
                 diffChosen = true;
                 chosenWord = diff3[random];
             }
         }
     }
 }
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                this.setSize(500,500);
+                this.setBackground(Color.BLACK);
+                this.pack();
+                this.setLocationRelativeTo(null);
+                this.setVisible(true);
+                this.setPreferredSize(new Dimension(400,400));
+
+                Graphics2D g2D = (Graphics2D) g;
+                g2D.setPaint(Color.WHITE);
+                g2D.setStroke(new BasicStroke(5));
+                //foundation
+                g2D.drawLine(275, 275, 125, 275);
+                //long line upwards
+                g2D.drawLine(125, 275, 125, 75);
+                //sideways support
+                g2D.drawLine(150, 275, 125, 250);
+                //line sideways
+                g2D.drawLine(125, 75, 200, 75);
+                //small line down
+                g2D.drawLine(200, 75, 200, 100);
+                //head
+                g2D.drawOval(187, 100, 25, 25);
+                //body
+                g2D.drawLine(200, 125, 200, 175);
+                //left leg
+                g2D.drawLine(200, 175, 180, 200);
+                //right leg
+                g2D.drawLine(200, 175, 220, 200);
+                //left arm
+                g2D.drawLine(200, 150, 180, 135);
+                //right arm
+                g2D.drawLine(200, 150, 220, 135);
