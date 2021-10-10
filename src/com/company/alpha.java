@@ -1,9 +1,10 @@
 package com.company;
 
 import java.util.Random;
-import static com.company.Main.read;
+import java.util.Scanner;
 
 public class alpha {
+    public static Scanner read = new Scanner(System.in);
     public void guessTheNumber() {
         extra1 extraObject = new extra1();
         System.out.println("Welcome to Guess The Number!");

@@ -1,13 +1,12 @@
 package com.company;
 
-import java.awt.*;
 import java.util.*;
 
 public class Main {
-    public static final Scanner read = new Scanner(System.in);
+    public static alpha alphaObject = new alpha();
+    public static beta betaObject = new beta();
+    public static Scanner read = new Scanner(System.in);
     public static void main(String[] args) {
-        alpha alphaObject = new alpha();
-        beta betaObject = new beta();
         boolean programChosen = false;
         while (!programChosen) {
             for (int m=0; m<25; m++) {
@@ -38,7 +37,7 @@ public class Main {
             }
             if (programChoice.matches("B") || programChoice.matches("b")) {
                 programChosen=true;
-                betaObject.hangmanRedirect();
+                betaObject.hangmanGame();
             }
             else {
                 System.out.println("Please pick one of the listed programs");
