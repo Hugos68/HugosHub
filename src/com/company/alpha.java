@@ -22,10 +22,8 @@ public class alpha {
                 System.out.println("We chose a number between 0 and " + userRange);
                 boolean gameWon=false;
                 while (!gameWon) {
-                    System.out.println();
-                    System.out.println("****** Round: "+turns+" ******");
+                    System.out.println("\n****** Round: "+turns+" ******\n");
                     turns++;
-                    System.out.println();
                     System.out.println("Enter a value:");
                     String stringUserGuess = read.nextLine();
                     int userGuess = Integer.parseInt(stringUserGuess);
@@ -37,9 +35,10 @@ public class alpha {
                     }
                     if (userGuess == correctNumber) {
                         gameWon=true;
-                        System.out.println("Congratulations! You guessed the number!");
-                        System.out.println("It took you " + turns + " turn(s)");
+                        System.out.println("\nCongratulations! You guessed the number!");
+                        System.out.println("\nIt took you " + turns + " turn(s)\n");
                         extraObject.pressAnyKeyToContinue();
+                        System.exit (1);
                     }
                 }
             }

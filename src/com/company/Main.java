@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.*;
 import java.util.*;
 
 public class Main {
@@ -37,7 +38,7 @@ public class Main {
             }
             if (programChoice.matches("B") || programChoice.matches("b")) {
                 programChosen=true;
-                betaObject.hangman();
+                betaObject.hangmanRedirect();
             }
             else {
                 System.out.println("Please pick one of the listed programs");
