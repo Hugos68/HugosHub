@@ -10,6 +10,7 @@ public class beta {
         ArrayList<Character> wordDissected = new ArrayList<>();
         ArrayList<Character> wordBeingGuessed = new ArrayList<>();
         ArrayList<Character> userGuess = new ArrayList<>();
+        ArrayList<Character> charsGuessed = new ArrayList<>();
 
         //converting chosenWord into char array and creating empty char array
         String chosenWord = chooseWord();
@@ -24,37 +25,74 @@ public class beta {
         //start guessing
         int turns = 0;
         int mistakes = 0;
-        int lettersGuessed = 0;
         boolean gameWon = false;
-        boolean characterReplaced;
         while (!gameWon) {
-            if (wordBeingGuessed.equals(wordDissected)) {
-                gameWon = true;
-                gameWon(turns);
-            }
             turns++;
             System.out.println("\n****** Round: " + turns + " ******\n");
             System.out.println(arrayToString(wordBeingGuessed));
             System.out.println("\nMake your guess:\n");
-            String stringUserGuess = read.nextLine();
             userGuess.clear();
+            String stringUserGuess = read.nextLine();
             userGuess.add(stringUserGuess.charAt(0));
-            int loop = 0;
-            characterReplaced = false;
-            while (!characterReplaced) {
-                mistakes++;
+            String stringCharsGuessed = arrayToString(charsGuessed);
+            String stringWordDissected = arrayToString(wordDissected);
+
+            if (stringCharsGuessed.contains(stringUserGuess)) {
+                System.out.println("You already guessed this letter");
+                turns--;
+            }
+            else if (!stringCharsGuessed.contains(stringUserGuess)) {
+                charsGuessed.add(userGuess.get(0));
                 for (int i = 0; i <= wordLength; i++) {
                     if (userGuess.get(0) == wordDissected.get(i)) {
                         replaceCharacter(i, wordBeingGuessed, wordDissected);
-                        mistakes--;
                     }
                 }
-                characterReplaced = true;
             }
-            if (mistakes==11) {
-                System.out.println("\nOh no, he's dead!\n\nThe word was: "+chosenWord+"\n");
+            else if (!stringUserGuess.contains(stringWordDissected) && !stringCharsGuessed.contains(stringUserGuess)) {
+                mistakes++;
+            }
+            if (wordBeingGuessed.equals(wordDissected)) {
+                gameWon=true;
+                System.out.println("\nCongratulations!\n\nYou guessed the word!\n\nIt took you "+turns+ " turns\n");
                 extra1.pressAnyKeyToContinue();
-                System.exit(1);
+                System.exit (1);
+            }
+            switch(mistakes) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+                case 11:
+                    System.out.println("\nOh no, he's dead!\n\nThe word was: "+chosenWord+"\n");
+                    extra1.pressAnyKeyToContinue();
+                    System.exit(1);
             }
         }
     }
@@ -140,11 +178,5 @@ public class beta {
         wordBeingDissected.get(characterNumber);
         wordBeingGuessed.add(characterNumber, wordBeingDissected.get(characterNumber));
         return wordBeingGuessed;
-    }
-
-    public void gameWon(int turns){
-        System.out.println("\nCongratulations!\n\nYou guessed the word!\n\nIt took you "+turns+ " turns\n");
-        extra1.pressAnyKeyToContinue();
-        System.exit (1);
     }
 }
